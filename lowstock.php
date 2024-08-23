@@ -36,7 +36,7 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Full Name</th>
+                    <th>Username</th>
                     <th>Contact</th>
                     <th>Nin Number</th> <th>Photo</th>
                     <th>Role</th><th>Password</th><th>Action</th>
@@ -80,56 +80,18 @@
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
-              <h4 class="modal-title">Add New User</h4>
+              <h4 class="modal-title">Default Modal</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
               </button>
             </div>
             <div class="modal-body">
-            <form>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="exampleInputFullname">Full Name</label>
-                    <input type="text" class="form-control" id="exampleInputFullname" placeholder="Enter Fullname">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputContatct">Contact</label>
-                    <input type="text" class="form-control" id="exampleInputContact" placeholder="Contatc">
-                  </div> <div class="form-group">
-                    <label for="exampleInputNIN">Nin Number</label>
-                    <input type="text" class="form-control" id="exampleInputNIN" placeholder="NIN">
-                  </div><div class="form-group">
-                        <label>Role</label>
-                        <select class="form-control">
-                          <option>Admin</option>
-                          <option>Cashier</option>
-                          <option>Manager</option>
-                          <option>Delivery Man</option>
-                          
-                        </select>
-                      </div>
-                  <div class="form-group">
-                    <label for="exampleInputFile">File input</label>
-                    <div class="input-group">
-                      <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="exampleInputFile">
-                        <label class="custom-file-label" for="exampleInputFile">Choose file</label>
-                      </div>
-                      <div class="input-group-append">
-                        <span class="input-group-text">Upload</span>
-                      </div>
-                    </div>
-                  </div>
-                  
-                </div>
-                <!-- /.card-body -->
-                <div class="modal-footer justify-content-between">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
               <button type="button" class="btn btn-primary">Save changes</button>
             </div>
-              </form>
-            </div>
-           
           </div>
           <!-- /.modal-content -->
         </div>
