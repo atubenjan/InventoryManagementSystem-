@@ -6,12 +6,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Users</h1>
+            <h1>Inventory</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Users</li>
+              <li class="breadcrumb-item active">Inventory</li>
             </ol>
           </div>
         </div>
@@ -27,7 +27,7 @@
            
               <div class="card-header">
                 <h5 class="card-title">  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">
-                  Add User 
+                  Add Inventory 
                 </button></h5>
               </div>
               <!-- /.card-header -->
@@ -36,10 +36,10 @@
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>Username</th>
-                    <th>Contact</th>
-                    <th>Nin Number</th> <th>Photo</th>
-                    <th>Role</th><th>Password</th><th>Action</th>
+                    <th>item name</th>
+                    <th>Quantity</th>
+                    <th>Unit of measure</th> <th>price</th>
+                    <th> Supplier</th><th>stockdate</th><th>Description</th>
                   </tr>
                   </thead>
                   <tbody>
@@ -48,10 +48,10 @@
                  
                   <tr>
                     <td>001</td>
-                    <td>Teddy Nandutu</td>
-                    <td>+256123456789</td>
-                    <td>CF19227873827GH</td> <td>My Photo</td>
-                    <td>Admin</td> <td>Password</td><td> 
+                    <td>Paint</td>
+                    <td>100</td>
+                    <td>tins</td> <td>@100,000</td>
+                    <td>Regal paints</td> <td>23/08/2024</td><td> 
                                             <a data-toggle="modal" href="#edit<?= $rx->user_id; ?>">
                                                 <i class="fa fa-edit" style="color:blue;" aria-hidden="true"></i></a>
 
