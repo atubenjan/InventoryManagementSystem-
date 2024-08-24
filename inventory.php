@@ -1,144 +1,212 @@
 <?php include('header.php'); ?>
 
-  <div class="content-wrapper">
+<div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Inventory</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Inventory</li>
-            </ol>
-          </div>
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Add New Product</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active">Add Product</li>
+                    </ol>
+                </div>
+            </div>
         </div>
-      </div><!-- /.container-fluid -->
     </section>
 
     <!-- Main content -->
     <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div class="card">
-           
-              <div class="card-header">
-                <h5 class="card-title">  <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modal-default">
-                  Add Inventory 
-                </button></h5>
-              </div>
-              <!-- /.card-header -->
-              <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
-                  <thead>
-                  <tr>
-                    <th>No</th>
-                    <th>item name</th>
-                    <th>Quantity</th>
-                    <th>Unit of measure</th> <th>price</th>
-                    <th> Supplier</th><th>stockdate</th><th>Description</th>
-                  </tr>
-                  </thead>
-                  <tbody>
-                
-                 
-                 
-                  <tr>
-                    <td>001</td>
-                    <td>Paint</td>
-                    <td>100</td>
-                    <td>tins</td> <td>@100,000</td>
-                    <td>Regal paints</td> <td>23/08/2024</td><td> 
-                                            <a data-toggle="modal" href="#edit<?= $rx->user_id; ?>">
-                                                <i class="fa fa-edit" style="color:blue;" aria-hidden="true"></i></a>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Product Information</h3>
+                        </div>
+                        <!-- /.card-header -->
+                        <div class="card-body">
+                            <form method="POST" action="your_product_action_page.php" enctype="multipart/form-data">
+                                <!-- Product Information -->
+                                <div class="form-group">
+                                    <label for="storeSelect">Store</label>
+                                    <select class="form-control" id="storeSelect" name="store" required>
+                                        <option value="" disabled selected>Select Store</option>
+                                        <option value="Store1">Store 1</option>
+                                        <option value="Store2">Store 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="warehouseSelect">Warehouse</label>
+                                    <select class="form-control" id="warehouseSelect" name="warehouse" required>
+                                        <option value="" disabled selected>Select Warehouse</option>
+                                        <option value="Warehouse1">Warehouse 1</option>
+                                        <option value="Warehouse2">Warehouse 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="productName">Product Name</label>
+                                    <input type="text" class="form-control" id="productName" name="productName" placeholder="Enter Product Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="slug">Slug</label>
+                                    <input type="text" class="form-control" id="slug" name="slug" placeholder="Enter Slug" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sku">SKU</label>
+                                    <input type="text" class="form-control" id="sku" name="sku" placeholder="Enter SKU" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="categorySelect">Category</label>
+                                    <select class="form-control" id="categorySelect" name="category" required>
+                                        <option value="" disabled selected>Select Category</option>
+                                        <option value="Category1">Category 1</option>
+                                        <option value="Category2">Category 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subCategorySelect">Sub Category</label>
+                                    <select class="form-control" id="subCategorySelect" name="subCategory">
+                                        <option value="" disabled selected>Select Sub Category</option>
+                                        <option value="SubCategory1">Sub Category 1</option>
+                                        <option value="SubCategory2">Sub Category 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="subSubCategorySelect">Sub Sub Category</label>
+                                    <select class="form-control" id="subSubCategorySelect" name="subSubCategory">
+                                        <option value="" disabled selected>Select Sub Sub Category</option>
+                                        <option value="SubSubCategory1">Sub Sub Category 1</option>
+                                        <option value="SubSubCategory2">Sub Sub Category 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="brandSelect">Brand</label>
+                                    <select class="form-control" id="brandSelect" name="brand" required>
+                                        <option value="" disabled selected>Select Brand</option>
+                                        <option value="Brand1">Brand 1</option>
+                                        <option value="Brand2">Brand 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="unitSelect">Unit</label>
+                                    <select class="form-control" id="unitSelect" name="unit" required>
+                                        <option value="" disabled selected>Select Unit</option>
+                                        <option value="Unit1">Unit 1</option>
+                                        <option value="Unit2">Unit 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="sellingTypeSelect">Selling Type</label>
+                                    <select class="form-control" id="sellingTypeSelect" name="sellingType" required>
+                                        <option value="" disabled selected>Select Selling Type</option>
+                                        <option value="Type1">Type 1</option>
+                                        <option value="Type2">Type 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="barcodeSymbology">Barcode Symbology</label>
+                                    <input type="text" class="form-control" id="barcodeSymbology" name="barcodeSymbology" placeholder="Enter Barcode Symbology">
+                                </div>
+                                <div class="form-group">
+                                    <label for="itemCode">Item Code</label>
+                                    <input type="text" class="form-control" id="itemCode" name="itemCode" placeholder="Enter Item Code" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description">Description</label>
+                                    <textarea class="form-control" id="description" name="description" placeholder="Enter Description (Maximum 60 Characters)" maxlength="60"></textarea>
+                                </div>
 
-                                            <a href="#" onclick="confirmDelete(<?= $rx->user_id; ?>)">
-                                                <i class="fa fa-times" style="color:red;" aria-hidden="true"></i>
-                                            </a>
+                                <!-- Pricing & Stocks -->
+                                <div class="form-group">
+                                    <label for="productTypeSelect">Product Type</label>
+                                    <select class="form-control" id="productTypeSelect" name="productType" required>
+                                        <option value="" disabled selected>Select Product Type</option>
+                                        <option value="Type1">Type 1</option>
+                                        <option value="Type2">Type 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="number" class="form-control" id="quantity" name="quantity" placeholder="Enter Quantity" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="price">Price</label>
+                                    <input type="text" class="form-control" id="price" name="price" placeholder="Enter Price" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="taxTypeSelect">Tax Type</label>
+                                    <select class="form-control" id="taxTypeSelect" name="taxType" required>
+                                        <option value="" disabled selected>Select Tax Type</option>
+                                        <option value="Tax1">Tax 1</option>
+                                        <option value="Tax2">Tax 2</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="discountTypeSelect">Discount Type</label>
+                                    <select class="form-control" id="discountTypeSelect" name="discountType">
+                                        <option value="" disabled selected>Select Discount Type</option>
+                                        <option value="Percentage">Percentage</option>
+                                        <option value="Fixed Amount">Fixed Amount</option>
+                                        <!-- Add more options as needed -->
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="discountValue">Discount Value</label>
+                                    <input type="text" class="form-control" id="discountValue" name="discountValue" placeholder="Enter Discount Value">
+                                </div>
+                                <div class="form-group">
+                                    <label for="quantityAlert">Quantity Alert</label>
+                                    <input type="number" class="form-control" id="quantityAlert" name="quantityAlert" placeholder="Enter Quantity Alert">
+                                </div>
 
-                                           
+                                <!-- Images -->
+                                <div class="form-group">
+                                    <label for="productImages">Add Images</label>
+                                    <input type="file" class="form-control-file" id="productImages" name="productImages[]" multiple accept="image/*">
+                                    <small class="form-text text-muted">You can upload multiple images.</small>
+                                </div>
 
-                                        </td>
-                  </tr>
-                
-                </table>
-              </div>
-              <!-- /.card-body -->
+                                <!-- Additional Fields -->
+                                <div class="form-group">
+                                    <label for="manufacturedDate">Manufactured Date</label>
+                                    <input type="date" class="form-control" id="manufacturedDate" name="manufacturedDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="expiryDate">Expiry On</label>
+                                    <input type="date" class="form-control" id="expiryDate" name="expiryDate">
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary">Save Product</button>
+                                </div>
+                            </form>
+                        </div>
+                        <!-- /.card-body -->
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col -->
             </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col -->
+            <!-- /.row -->
         </div>
-        <!-- /.row -->
-      </div>
-      <!-- /.container-fluid -->
+        <!-- /.container-fluid -->
     </section>
-    <!-- /.content --><div class="modal fade" id="modal-default">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h4 class="modal-title">Default Modal</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-            <form>
-            <div class="form-group">
-                <label for="itemName">Item Name</label>
-                <input type="text" class="form-control" id="itemName" placeholder="Enter item name" required>
-            </div>
-            <div class="form-group">
-                <label for="itemQuantity">Quantity</label>
-                <input type="number" class="form-control" id="itemQuantity" placeholder="Enter quantity" required>
-            </div>
-            <div class="form-group">
-                <label for="quantityUnit">Unit of Measurement</label>
-                <select class="form-control" id="quantityUnit" required>
-                    <option value="">Select unit</option>
-                    <option value="kg">Kilogram (kg)</option>
-                    <option value="g">Gram (g)</option>
-                    <option value="l">Liter (l)</option>
-                    <option value="ml">Milliliter (ml)</option>
-                    <option value="pcs">Pieces (pcs)</option>
-                    <option value="m">Meter (m)</option>
-                    <option value="cm">Centimeter (cm)</option>
-                    <option value="ft">Foot (ft)</option>
-                    <option value="in">Inch (in)</option>
-                    <!-- Add more units as needed -->
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="itemPrice">Price</label>
-                <input type="number" class="form-control" id="itemPrice" placeholder="Enter price" step="0.01" required>
-            </div>
-            <div class="form-group">
-                <label for="itemSupplier">Supplier</label>
-                <input type="text" class="form-control" id="itemSupplier" placeholder="Enter supplier name" required>
-            </div>
-            <div class="form-group">
-                <label for="stockDate">Stock Date</label>
-                <input type="date" class="form-control" id="stockDate" required>
-            </div>
-            <div class="form-group">
-                <label for="itemDescription">Description</label>
-                <textarea class="form-control" id="itemDescription" rows="3" placeholder="Enter item description"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+    <!-- /.content -->
+</div>
 
-            </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-              <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-          </div>
-          <!-- /.modal-content -->
-        </div>
-        <!-- /.modal-dialog -->
-      </div>
-  </div>
-  <?php include('footer.php'); ?>
+<?php include('footer.php'); ?>
